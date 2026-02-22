@@ -16,6 +16,22 @@ public record struct AtelInst(byte instruction, ushort? operand) {
     }
 }
 
+/*
+ * The REQ family of opcodes can be prefixed with:
+ * - `F` ("Force") to force the request to be sent
+ *    A normal REQ opcode is aborted/fails if the target worker already has a queued same-priority request
+ * - `T` ("Tagged") to only send the request if an identical one is not already pending
+ * - `B` ("Branching") to only send the request if a predicate allows it.
+ *    It is unknown how Branching is meant to be used, or what the predicate is.
+ * - `P` ("Player") to send the reqeuest to a specific Chr in combat
+ * The Branching prefix may be combined with the Force and Tagged prefixes.
+ * Other prefixes cannot be combined
+ * 
+ * Additionally, REQ opcodes can be suffixed with:
+ * - `SW` ("Start Wait") to await the start of the requested function before continuing execution of the script
+ * - `EW` ("End Wait") to await the end of the requested function before continuing execution of the script
+ */
+
 public enum AtelOp : byte {
     NOP        = 0x0,
     LOR        = 0x1,
