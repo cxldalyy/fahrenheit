@@ -3,11 +3,16 @@
 namespace Fahrenheit.Core.Runtime;
 
 /* [fkelava 13/11/25 22:03]
- * This module is fairly complex. Read through slowly and carefully.
+ * The game's original save system is limiting. A global limit of 200 saves exist,
+ * and they cannot be separated between modsets. While applications like Mod Organizer 2
+ * can retrofit set functionality to any game, we must interface with most of the
+ * save system _anyway_ to provide local state callbacks.
  *
- * Originally, we simply overrode the actual act of (auto)saving and loading,
- * and hooked the game's Flash-based Iggy UI to display custom save lists.
- * This proved untenably slow, so it was replaced with a custom ImGui display.
+ * My first attempt at doing this involved hooking the game's Flash-based Iggy UI to display custom
+ * save lists. While this worked, it proved both hideously complex and untenably slow.
+ *
+ * A complete UI replacement in ImGui was decided instead. As the vanilla UI and save system are
+ * tightly bound, this effectively meant I had to re-implement the entire save system.
  */
 
 internal enum FhSaveExtensionSystemState {
@@ -47,10 +52,10 @@ public unsafe sealed class FhSaveExtensionModule : FhModule {
         _fnptr_SaveDataSaveLoadSucceed = FhSavePal.pal_fnaddr_SaveDataSaveLoadSucceed();
 
     private readonly FhMethodHandle<__autosave>               _handle_autosave;
+    private readonly FhMethodHandle<TkMenuJumpToLoadedScene>  _handle_copy;
     private readonly FhMethodHandle<__save_state_transition>  _handle_tosave;
     private readonly FhMethodHandle<__save_state_transition>  _handle_toload;
     private readonly FhMethodHandle<__save_state_transition>? _handle_toalbd; // FFX only
-    private readonly FhMethodHandle<TkMenuJumpToLoadedScene>  _handle_oncopy;
 
     private readonly FhModuleHandle<FhLocalStateModule>  _lsm_handle;
     private          FhLocalStateModule?                 _lsm;
@@ -62,14 +67,14 @@ public unsafe sealed class FhSaveExtensionModule : FhModule {
 
     public FhSaveExtensionModule() {
         FhMethodLocation loc_autosave = new(0x2F0650, 0x11D510);
+        FhMethodLocation loc_copy     = new(0x4B4E70, 0x36AD50);
         FhMethodLocation loc_tosave   = new(0x248950, 0x884D0);
         FhMethodLocation loc_toload   = new(0x248910, 0x884A0);
-        FhMethodLocation loc_oncopy   = new(0x4B4E70, 0x36AD50);
 
         _handle_autosave = new(this, loc_autosave, impl_autosave);
+        _handle_copy     = new(this, loc_copy,     impl_copy);
         _handle_tosave   = new(this, loc_tosave,   signal_enter_save);
         _handle_toload   = new(this, loc_toload,   signal_enter_load);
-        _handle_oncopy   = new(this, loc_oncopy,   impl_oncopy);
 
         if (FhGlobal.game_id is FhGameId.FFX) {
             _handle_toalbd = new(this, "FFX.exe", 0x2EFFF0, signal_enter_albd);
@@ -81,9 +86,9 @@ public unsafe sealed class FhSaveExtensionModule : FhModule {
 
     public override bool init(FhModContext mod_context, FileStream global_state_file) {
         return _handle_autosave.hook()
+            && _handle_copy    .hook()
             && _handle_tosave  .hook()
             && _handle_toload  .hook()
-            && _handle_oncopy  .hook()
             && (_handle_toalbd?.hook() ?? true)
             && _lsm_handle     .try_get_module(out _lsm)
             && _smm_handle     .try_get_module(out _smm);
@@ -179,8 +184,8 @@ public unsafe sealed class FhSaveExtensionModule : FhModule {
      */
 
     [UnmanagedCallConv(CallConvs = [ typeof(CallConvStdcall) ])]
-    private void impl_oncopy() {
-        _handle_oncopy.orig_fptr();
+    private void impl_copy() {
+        _handle_copy.orig_fptr();
         _lsm!.state_load_slot(_load_pending_slot);
     }
 
@@ -206,9 +211,8 @@ public unsafe sealed class FhSaveExtensionModule : FhModule {
      * The game exhibits no-throw behavior on most violations of save system invariants. Load fails
      * with 'Save data is corrupt'. Autosave no-ops without indicating fault. Saving crashes.
      *
-     * We do not follow this. Fahrenheit's purpose is to provide invariants mods can rely on, to
-     * simplify their design. Attempting to suppress failure to perform I/O in Fahrenheit dirs is
-     * just kicking the ball down the curb to mod authors, which goes against this objective.
+     * We do not follow this. Attempting to suppress failure to perform I/O in Fahrenheit dirs is
+     * just kicking the ball down the curb to mod authors, who can do nothing in such cases.
      */
 
     /// <summary>

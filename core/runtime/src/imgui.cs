@@ -87,13 +87,12 @@ public unsafe sealed class FhImguiModule : FhModule, IFhNativeGraphicsUser {
     private IDXGISwapChain*         _ptr_swapchain;  // https://learn.microsoft.com/en-us/windows/win32/api/dxgi/nn-dxgi-idxgiswapchain
     private ID3D11Device*           _ptr_device;     // https://learn.microsoft.com/en-us/windows/win32/api/d3d11/nn-d3d11-id3d11device
     private ID3D11DeviceContext*    _ptr_device_ctx; // https://learn.microsoft.com/en-us/windows/win32/api/d3d11/nn-d3d11-id3d11devicecontext
-    private ID3D11Resource*         _ptr_surface;    // https://learn.microsoft.com/en-us/windows/win32/api/d3d11/nn-d3d11-id3d11texture2d
     private ID3D11RenderTargetView* _ptr_rtv;        // https://learn.microsoft.com/en-us/windows/win32/api/d3d11/nn-d3d11-id3d11rendertargetview
 
     private FhMethodHandle<DXGISwapChain_Present>?       _handle_present;
     private FhMethodHandle<DXGISwapChain_ResizeBuffers>? _handle_resize_buffers;
 
-    private bool _rtv_generated;
+    private int _rtv_generated;
 
     public FhImguiModule() {
         FhMethodLocation loc_pinput = new(0x225930, 0x6B51E0);
@@ -200,8 +199,8 @@ public unsafe sealed class FhImguiModule : FhModule, IFhNativeGraphicsUser {
     ///     Allows interception of raw input from the game, redirecting it to ImGui if appropriate.
     /// </summary>
     private int h_pinput() {
-        if (_hWnd           == 0    // h_init_wndproc hasn't run yet?
-         || _ptr_device     == null // h_init_d3d11 hasn't run yet?
+        if (_hWnd           == 0    // if assign_devices has not yet run, bail
+         || _ptr_device     == null
          || _ptr_device_ctx == null)
             return _handle_pinput.orig_fptr();
 
@@ -215,15 +214,12 @@ public unsafe sealed class FhImguiModule : FhModule, IFhNativeGraphicsUser {
     ///     Intercepts attempts to resize the game window to allow ImGui to continue drawing.
     /// </summary>
     private nint h_resize_buffers(IDXGISwapChain* pSwapChain, uint BufferCount, uint Width, uint Height, DXGI_FORMAT NewFormat, uint SwapChainFlags) {
-        if (_ptr_device_ctx == null)
-            return _handle_resize_buffers!.orig_fptr(pSwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
-
         if (_ptr_rtv != null) {
             _ptr_device_ctx->OMSetRenderTargets(0, null, null);
             _ptr_rtv       ->Release();
         }
 
-        _rtv_generated = false; // forces regeneration of ImGui surfaces/RTV in next `h_present`
+        Interlocked.CompareExchange(ref _rtv_generated, 0, 1);
         return _handle_resize_buffers!.orig_fptr(pSwapChain, BufferCount, Width, Height, NewFormat, SwapChainFlags);
     }
 
@@ -231,15 +227,14 @@ public unsafe sealed class FhImguiModule : FhModule, IFhNativeGraphicsUser {
     ///     Overrides the game's <see cref="IDXGISwapChain.Present(uint, uint)"/> call to display mods' user interfaces.
     /// </summary>
     private nint h_present(IDXGISwapChain* pSwapChain, uint SyncInterval, uint Flags) {
-        if (!_rtv_generated) {
-            fixed (ID3D11Resource**         ppSurface = &_ptr_surface)
-            fixed (ID3D11RenderTargetView** ppRTView  = &_ptr_rtv) {
-                _ptr_swapchain->GetBuffer(0, Windows.__uuidof<ID3D11Texture2D>(), (void**)ppSurface);
-                _ptr_device   ->CreateRenderTargetView(_ptr_surface, null, ppRTView);
-                _ptr_surface  ->Release();
-            }
+        if (Interlocked.CompareExchange(ref _rtv_generated, 1, 0) == 0) {
+            ID3D11Resource* ptr_backbuffer;
 
-            _rtv_generated = true;
+            fixed (ID3D11RenderTargetView** ppRTView = &_ptr_rtv) {
+                _ptr_swapchain->GetBuffer(0, Windows.__uuidof<ID3D11Texture2D>(), (void**)&ptr_backbuffer);
+                _ptr_device   ->CreateRenderTargetView(ptr_backbuffer, null, ppRTView);
+                ptr_backbuffer->Release();
+            }
         }
 
         ImGuiImplD3D11.NewFrame();

@@ -2,11 +2,21 @@
 
 namespace Fahrenheit.Core.Runtime;
 
+/* [fkelava 23/02/26 16:59]
+ * Mods must be able to persist some information between saves or game sessions.
+ *
+ * They must not store such information in empty space of the save data, lest they make the save
+ * impossible to load in their absence. They should also not place such data in random places on
+ * the user's system where they might be hard to find, move, or delete.
+ *
+ * Fahrenheit provides a callback invoked on save/load, allowing mods to read from and write to an
+ * isolated file per save game. This is called 'local state'. State travels with the user's Fahrenheit folder.
+ *
+ * Modules also have access to an analogous 'global state' file, which is not unique per save game.
+ */
+
 /// <summary>
 ///     Implements the 'local state' mechanism of Fahrenheit.
-///     <para/>
-///     'Local state' is a unique file for each save that <see cref="FhModule"/>s have access to at save/load time.
-///     This allows information unique to that save game to be persisted to disk.
 ///     <para/>
 ///     Do not interface with this module directly. Instead, implement
 ///     <see cref="FhModule.load_local_state(FileStream, FhLocalStateInfo)"/>
@@ -63,7 +73,7 @@ public unsafe sealed class FhLocalStateModule : FhModule {
 
                 _logger.Info($"Reading metadata for module {module_type}.");
                 FhLocalStateInfo state_meta = JsonSerializer.Deserialize<FhLocalStateInfo>(state_meta_fs, FhUtil.InternalJsonOpts)
-                ?? throw new Exception("FH_E_LOCAL_STATE_META_BLOCK_NULL");
+                    ?? throw new Exception("FH_E_LOCAL_STATE_META_BLOCK_NULL");
 
                 _logger.Info($"{state_fn} -> {module_type}.");
                 module_context.Module.load_local_state(state_fs, state_meta);

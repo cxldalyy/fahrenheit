@@ -13,8 +13,8 @@ namespace Fahrenheit.Core.Runtime;
 /// </summary>
 internal unsafe interface IFhNativeGraphicsUser {
     /// <summary>
-    ///     Called when a valid <see cref="ID3D11Device"/>,
-    ///     <see cref="ID3D11DeviceContext"/>, <see cref="IDXGISwapChain"/> are obtained.
+    ///     Called when a valid <see cref="ID3D11Device"/>, <see cref="ID3D11DeviceContext"/>,
+    ///     <see cref="IDXGISwapChain"/> and <see cref="HWND"/> are obtained.
     /// </summary>
     internal void assign_devices(
         ID3D11Device*        ptr_device,         // https://learn.microsoft.com/en-us/windows/win32/api/d3d11/nn-d3d11-id3d11device
@@ -61,9 +61,9 @@ public unsafe sealed class FhNativeGraphicsModule : FhModule {
 
         return h_imgui  .try_get_module(out FhImguiModule?          m_imgui)
             && h_resload.try_get_module(out FhResourceLoaderModule? m_resload)
-            && _h_d3d_init.hook()
             && _users.Add(m_imgui)
-            && _users.Add(m_resload);
+            && _users.Add(m_resload)
+            && _h_d3d_init.hook();
     }
 
     /// <summary>
@@ -83,6 +83,11 @@ public unsafe sealed class FhNativeGraphicsModule : FhModule {
         ID3D11Device**        ppDevice,
         D3D_FEATURE_LEVEL*    pFeatureLevel,
         ID3D11DeviceContext** ppImmediateContext) {
+
+        /* [fkelava 23/02/26 16:25]
+         * To enable D3D debug layer if your system supports it, pass
+         * > Flags | (uint)D3D11_CREATE_DEVICE_FLAG.D3D11_CREATE_DEVICE_DEBUG.
+         */
 
         HRESULT hr = _h_d3d_init.orig_fptr(
             pAdapter,
