@@ -28,15 +28,7 @@
 
     <!-- PROJECT REFERENCES -->
     <ItemGroup>
-        <ProjectReference Include="..\framework\Fahrenheit.Core.csproj">
-            <Private>false</Private>
-            <ExcludeAssets>runtime;native</ExcludeAssets>
-        </ProjectReference>
-        <ProjectReference Include="..\ffx\Fahrenheit.Core.FFX.csproj">
-            <Private>false</Private>
-            <ExcludeAssets>runtime;native</ExcludeAssets>
-        </ProjectReference>
-        <ProjectReference Include="..\ffx2\Fahrenheit.Core.FFX2.csproj">
+        <ProjectReference Include="..\..\core\fh\Fahrenheit.csproj">
             <Private>false</Private>
             <ExcludeAssets>runtime;native</ExcludeAssets>
         </ProjectReference>

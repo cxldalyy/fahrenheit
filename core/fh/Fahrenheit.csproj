@@ -12,9 +12,9 @@
 
     <!-- ASSEMBLY ADDITIONAL PROPERTIES -->
     <PropertyGroup>
-        <AssemblyName>fhx</AssemblyName>
-        <AssemblyTitle>Fahrenheit FF X Support Library</AssemblyTitle>
-        <Product>Fahrenheit FF X Support Library</Product>
+        <AssemblyName>fh</AssemblyName>
+        <AssemblyTitle>Fahrenheit Mod Framework</AssemblyTitle>
+        <Product>Fahrenheit Mod Framework</Product>
     </PropertyGroup>
 
     <!-- SDK REFERENCES -->
@@ -26,12 +26,11 @@
         <None Include="$(SolutionDir)\.editorconfig" Link=".editorconfig" />
     </ItemGroup>
 
-    <!-- PROJECT REFERENCES -->
+    <!-- EXTERNAL PROJECT REFS -->
     <ItemGroup>
-        <ProjectReference Include="..\framework\Fahrenheit.Core.csproj">
-            <Private>false</Private>
-            <ExcludeAssets>runtime;native</ExcludeAssets>
-        </ProjectReference>
+        <PackageReference Include="Hexa.NET.DirectXTex" Version="2.0.4" />
+        <PackageReference Include="Hexa.NET.ImGui.Backends" Version="1.0.18" />
+        <PackageReference Include="TerraFX.Interop.Windows" Version="10.0.26100.6" />
     </ItemGroup>
 
 </Project>

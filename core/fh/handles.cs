@@ -51,6 +51,14 @@ internal sealed class FhRuntimeHandle<T> {
 }
 
 /// <summary>
+///     Used by <see cref="FhMethodHandle{T}"/> to target functions which are
+///     analogous but located at different offsets in FF X and FF X-2.
+/// </summary>
+public sealed record FhMethodLocation(
+    nint OffsetX,
+    nint OffsetX2);
+
+/// <summary>
 ///     Represents a method whose signature is equal to <typeparamref name="T"/>.
 ///     You may then invoke or hook the function.
 /// </summary>
@@ -191,11 +199,3 @@ internal class FhMethodAddressMap {
         }
     }
 }
-
-/// <summary>
-///     Used by <see cref="FhMethodHandle{T}"/> to target functions which are
-///     analogous but located at different offsets in FF X and FF X-2.
-/// </summary>
-public sealed record FhMethodLocation(
-    nint OffsetX,
-    nint OffsetX2);
