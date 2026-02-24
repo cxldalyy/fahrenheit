@@ -1,8 +1,8 @@
 ﻿// SPDX-License-Identifier: MIT
 
-using Fahrenheit.Core.FFX.Ids;
+using Fahrenheit.FFX.Ids;
 
-namespace Fahrenheit.Core.FFX.Battle;
+namespace Fahrenheit.FFX.Battle;
 
 [InlineArray(18)]
 public struct PlyArrayU32 {

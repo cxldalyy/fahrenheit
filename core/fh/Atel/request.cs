@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.Atel;
+namespace Fahrenheit.Atel;
 
 public struct AtelRequest {
     public  ushort worker_idx;

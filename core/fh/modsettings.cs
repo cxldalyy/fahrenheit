@@ -2,7 +2,7 @@
 
 using Hexa.NET.ImGui;
 
-namespace Fahrenheit.Core;
+namespace Fahrenheit;
 
 public abstract class FhSetting(string id) {
     internal const float TOOLTIP_SIZE = 40;

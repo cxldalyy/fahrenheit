@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.Runtime;
+namespace Fahrenheit.Runtime;
 
 /* [fkelava 26/11/25 17:25]
  * This structure contains all the fields the game would show as part of the standard Iggy

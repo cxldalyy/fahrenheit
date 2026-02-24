@@ -1,8 +1,8 @@
 ﻿// SPDX-License-Identifier: MIT
 
-using Fahrenheit.Core.FFX.Ids;
+using Fahrenheit.FFX.Ids;
 
-namespace Fahrenheit.Core.FFX;
+namespace Fahrenheit.FFX;
 
 [StructLayout(LayoutKind.Explicit, Pack = 4, Size = 0x68C0)]
 public unsafe struct SaveData {

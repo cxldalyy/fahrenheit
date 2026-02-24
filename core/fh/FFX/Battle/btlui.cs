@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.FFX.Battle;
+namespace Fahrenheit.FFX.Battle;
 
 public enum BtlWindowType : ushort {
     Main        = 0x00,

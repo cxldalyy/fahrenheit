@@ -2,7 +2,7 @@
 
 using System.Diagnostics;
 
-namespace Fahrenheit.Core.Runtime;
+namespace Fahrenheit.Runtime;
 
 /// <summary>
 ///     Allows multiple sets of saves to exist.

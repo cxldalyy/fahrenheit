@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core;
+namespace Fahrenheit;
 
 /* [fkelava 08/11/25 21:45]
  * These are direct mappings of game structures.

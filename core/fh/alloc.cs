@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core;
+namespace Fahrenheit;
 
 /// <summary>
 ///     Tracks native allocations incurred by a single caller.

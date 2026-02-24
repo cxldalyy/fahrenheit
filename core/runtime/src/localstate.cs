@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.Runtime;
+namespace Fahrenheit.Runtime;
 
 /* [fkelava 23/02/26 16:59]
  * Mods must be able to persist some information between saves or game sessions.

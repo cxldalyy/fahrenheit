@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core;
+namespace Fahrenheit;
 
 /// <summary>
 ///     Contains Fahrenheit boot logic and basic internal runtime constants.

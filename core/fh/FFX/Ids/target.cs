@@ -9,7 +9,7 @@
  * partial, v. x_idmotstd
  */
 
-namespace Fahrenheit.Core.FFX.Ids;
+namespace Fahrenheit.FFX.Ids;
 
 public static class TargetId {
     public const T_XTargetId CHR_NOP         = -1;

@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.Atel;
+namespace Fahrenheit.Atel;
 
 [InlineArray(18)]
 public struct WorkerThreadsArray {

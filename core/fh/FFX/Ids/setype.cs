@@ -7,7 +7,7 @@
  * /ffx_ps2/ffx/proj2/chr/ath/battle/setype.ath
  */
 
-namespace Fahrenheit.Core.FFX.Ids;
+namespace Fahrenheit.FFX.Ids;
 
 public static class SeTypeId {
     public const T_XSeTypeId SE_WOOD_PIER      = 0;

@@ -7,7 +7,7 @@
  * /ffx_ps2/ffx/proj2/chr/ath/battle/camera.ath
  */
 
-namespace Fahrenheit.Core.FFX.Ids;
+namespace Fahrenheit.FFX.Ids;
 
 // These are used as parameters to call targets 707D/707E.
 public static class BtlDbgFlagId {

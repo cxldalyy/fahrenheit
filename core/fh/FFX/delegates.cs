@@ -1,8 +1,8 @@
 ﻿// SPDX-License-Identifier: MIT
 
-using Fahrenheit.Core.Atel;
+using Fahrenheit.Atel;
 
-namespace Fahrenheit.Core.FFX;
+namespace Fahrenheit.FFX;
 
 public static unsafe class Call {
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]

@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.Tests;
+namespace Fahrenheit.Tests;
 
 [TestFixture]
 public class FhEncodingTests {

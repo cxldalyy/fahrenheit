@@ -5,7 +5,7 @@
  * /ffx_ps2/ffx2/master/jppc/battle/header/setype.ath
  */
 
-namespace Fahrenheit.Core.FFX2.Ids;
+namespace Fahrenheit.FFX2.Ids;
 
 public static class SeTypeId {
     public const T_X2SeTypeId SE_WOOD_PIER      = 0;

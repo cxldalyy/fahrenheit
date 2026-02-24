@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.Runtime;
+namespace Fahrenheit.Runtime;
 
 /* [fkelava 13/11/25 22:03]
  * The game's original save system is limiting. A global limit of 200 saves exist,

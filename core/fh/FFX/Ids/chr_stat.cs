@@ -9,7 +9,7 @@
  * Partial. Many constants yet to come along with other stuff.
  */
 
-namespace Fahrenheit.Core.FFX.Ids;
+namespace Fahrenheit.FFX.Ids;
 
 public static class ChrStatId {
     public const T_XChrStatId STAT_HP                        = 0;   // ＨＰ

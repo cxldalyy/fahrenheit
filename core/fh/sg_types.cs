@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core;
+namespace Fahrenheit;
 
 /* [fkelava 23/9/25 18:56]
  * Inline arrays for common powers of two are provided and preferred where usable.

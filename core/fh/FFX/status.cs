@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.FFX;
+namespace Fahrenheit.FFX;
 
 public struct StatusMap {
     public byte death;

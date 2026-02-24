@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.Runtime;
+namespace Fahrenheit.Runtime;
 
 /* [fkelava 20/01/26 00:24]
  * This interface is internal and thus meant to be implemented explicitly, not implicitly.

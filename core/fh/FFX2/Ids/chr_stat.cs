@@ -7,7 +7,7 @@
  * Partial. Many constants yet to come along with other stuff.
  */
 
-namespace Fahrenheit.Core.FFX2.Ids;
+namespace Fahrenheit.FFX2.Ids;
 
 public static class ChrStatId {
     public const T_X2ChrStatId STAT_NOP                       =   0; // なし

@@ -1,4 +1,4 @@
-namespace Fahrenheit.Core.FFX;
+namespace Fahrenheit.FFX;
 
 // This is likely to get folded into a different file once we figure out what it's for
 [StructLayout(LayoutKind.Explicit, Size = 0x4)]

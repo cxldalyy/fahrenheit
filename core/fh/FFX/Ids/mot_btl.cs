@@ -9,7 +9,7 @@
  * partial, v. x_idtgt
  */
 
-namespace Fahrenheit.Core.FFX.Ids;
+namespace Fahrenheit.FFX.Ids;
 
 public static class BtlMotionId {
     public const T_XBtlMotionId MOT_ALL         = 0xFFFF;

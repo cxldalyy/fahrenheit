@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.FFX;
+namespace Fahrenheit.FFX;
 
 public enum FontForegroundColor {
     White             = 0x0, // Also 0x04, 0x0A

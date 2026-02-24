@@ -4,7 +4,7 @@
 // ffx_ps2/ffx2/master/jppc/battle/kernel/takara.ath
 // Switch release of FFX/X-2 HD
 
-namespace Fahrenheit.Core.FFX2;
+namespace Fahrenheit.FFX2;
 
 public static partial class TreasureId
 {

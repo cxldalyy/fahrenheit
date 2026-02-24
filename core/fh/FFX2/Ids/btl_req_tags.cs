@@ -5,7 +5,7 @@
  * /ffx_ps2/ffx2/master/jppc/battle/header/btlactor.h
  */
 
-namespace Fahrenheit.Core.FFX2.Ids;
+namespace Fahrenheit.FFX2.Ids;
 
 // システムアクター一覧
 public static class BtlRequestActorId {

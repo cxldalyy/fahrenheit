@@ -1,8 +1,8 @@
 ﻿// SPDX-License-Identifier: MIT
 
-using Fahrenheit.Core.Atel;
+using Fahrenheit.Atel;
 
-namespace Fahrenheit.Core.FFX2;
+namespace Fahrenheit.FFX2;
 
 public unsafe static class Globals {
     public static class Atel {

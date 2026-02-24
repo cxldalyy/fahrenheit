@@ -8,7 +8,7 @@
  *
  * partial
  */
-namespace Fahrenheit.Core.FFX.Ids;
+namespace Fahrenheit.FFX.Ids;
 
 public static class CamTargetId {
     public const T_XCamTargetId CAM_CHR_NOP         = -1;

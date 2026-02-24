@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core;
+namespace Fahrenheit;
 
 /// <summary>
 ///     Stores all loaded mods' <see cref="FhModContext"/> for runtime lookup,

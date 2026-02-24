@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.Runtime;
+namespace Fahrenheit.Runtime;
 
 [FhLoad(FhGameId.FFX | FhGameId.FFX2)]
 public unsafe sealed class FhModConfigModule : FhModule {

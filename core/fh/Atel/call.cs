@@ -2,7 +2,7 @@
 
 using static System.Diagnostics.Debug;
 
-namespace Fahrenheit.Core.Atel;
+namespace Fahrenheit.Atel;
 
 public enum AtelCallTargetNamespace {
     Common = 0x0,

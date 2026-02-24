@@ -9,7 +9,7 @@
  * Translated for your convenience.
  */
 
-namespace Fahrenheit.Core.FFX.Ids;
+namespace Fahrenheit.FFX.Ids;
 
 public static class ItemId {
     public const T_XCommandId ITEM_POTION             = 0x20_00;

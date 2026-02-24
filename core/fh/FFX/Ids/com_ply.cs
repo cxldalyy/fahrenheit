@@ -9,7 +9,7 @@
  * This was a real pain to translate.
  */
 
-namespace Fahrenheit.Core.FFX.Ids;
+namespace Fahrenheit.FFX.Ids;
 
 public static class PlayerCommandId {
     public const T_XCommandId PCOM_ATTACK                     = 0x03000;

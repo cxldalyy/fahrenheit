@@ -7,7 +7,7 @@
  * /ffx_ps2/ffx/proj2/chr/ath/battle/ply_save.ath
  */
 
-namespace Fahrenheit.Core.FFX.Ids;
+namespace Fahrenheit.FFX.Ids;
 
 public static class PlySaveId {
     public const T_XPlySaveId PC_TIDUS   = 0x00;

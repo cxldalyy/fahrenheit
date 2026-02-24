@@ -5,7 +5,7 @@
  * /ffx_ps2/ffx2/master/jppc/battle/header/btlactor.h
  */
 
-namespace Fahrenheit.Core.FFX2.Atel;
+namespace Fahrenheit.FFX2.Atel;
 
 [StructLayout(LayoutKind.Sequential)]
 public readonly struct AtelBtlRequestData {

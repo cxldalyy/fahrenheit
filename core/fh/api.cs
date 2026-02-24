@@ -7,7 +7,7 @@
  */
 [assembly: InternalsVisibleTo("fhruntime")]
 
-namespace Fahrenheit.Core;
+namespace Fahrenheit;
 
 /// <summary>
 ///     The accessor for objects and helpers that compose the public Fahrenheit API.

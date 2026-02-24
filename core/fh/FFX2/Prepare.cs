@@ -5,7 +5,7 @@
 
 using System.Runtime.CompilerServices;
 
-namespace Fahrenheit.Core.FFX2;
+namespace Fahrenheit.FFX2;
 
 public partial struct Prepare
 {

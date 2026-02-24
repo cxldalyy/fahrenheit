@@ -7,7 +7,7 @@
  * /ffx_ps2/ffx/proj2/chr/ath/battle/btl.h
  */
 
-namespace Fahrenheit.Core.FFX.Ids;
+namespace Fahrenheit.FFX.Ids;
 
 public static class BtlId {
     // system00

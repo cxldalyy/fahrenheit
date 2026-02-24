@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.Atel;
+namespace Fahrenheit.Atel;
 
 [StructLayout(LayoutKind.Sequential)]
 public struct AtelScriptHeader {

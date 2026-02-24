@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.FFX.Battle;
+namespace Fahrenheit.FFX.Battle;
 
 [StructLayout(LayoutKind.Sequential, Size = 0x4)]
 public struct CtbEntry {

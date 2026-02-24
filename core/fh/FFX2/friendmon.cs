@@ -1,4 +1,4 @@
-﻿namespace Fahrenheit.Core.FFX2;
+﻿namespace Fahrenheit.FFX2;
 
 [StructLayout(LayoutKind.Explicit, Size = 0x180)]
 public unsafe struct FriendMonsterCommand {

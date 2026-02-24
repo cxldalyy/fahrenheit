@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core;
+namespace Fahrenheit;
 
 /* [fkelava 28/10/25 16:26]
  * FTCX is the original font format of the games. While seemingly unused in the Remaster,

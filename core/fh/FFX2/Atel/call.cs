@@ -26,7 +26,7 @@
  * Additionally, the calling convention must be specified for each function.
  */
 
-namespace Fahrenheit.Core.FFX2.Atel;
+namespace Fahrenheit.FFX2.Atel;
 
 public static unsafe class AtelCall {
     private const nint __addr_NameSpace_Common    = 0x00958ab8;

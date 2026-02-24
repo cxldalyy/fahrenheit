@@ -15,7 +15,7 @@ using Hexa_TexMetadata  = Hexa.NET.DirectXTex.TexMetadata;
 using Hexa_TGAFlags     = Hexa.NET.DirectXTex.TGAFlags;
 using Hexa_WICFlags     = Hexa.NET.DirectXTex.WICFlags;
 
-namespace Fahrenheit.Core.Runtime;
+namespace Fahrenheit.Runtime;
 
 /// <summary>
 ///     Loads textures and other resources at runtime.

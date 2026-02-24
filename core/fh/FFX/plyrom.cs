@@ -1,4 +1,4 @@
-namespace Fahrenheit.Core.FFX;
+namespace Fahrenheit.FFX;
 
 /// <summary>
 ///     As the name <c>PlyRom</c> (Player Read-Only Memory) indicates,<br/>

@@ -12,7 +12,7 @@ using HexaID3D11DevicePtr        = Hexa.NET.ImGui.Backends.D3D11.ID3D11DevicePtr
 using ImGuiImplD3D11             = Hexa.NET.ImGui.Backends.D3D11.ImGuiImplD3D11;
 using ImGuiImplWin32             = Hexa.NET.ImGui.Backends.Win32.ImGuiImplWin32;
 
-namespace Fahrenheit.Core.Runtime;
+namespace Fahrenheit.Runtime;
 
 [UnmanagedFunctionPointer(CallingConvention.Winapi)]
 internal delegate nint WndProc(HWND hWnd, uint msg, WPARAM wParam, LPARAM lParam);

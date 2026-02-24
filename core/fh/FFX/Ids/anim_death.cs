@@ -7,7 +7,7 @@
  * /ffx_ps2/ffx/proj2/chr/ath/battle/btlhead.src
  */
 
-namespace Fahrenheit.Core.FFX.Ids;
+namespace Fahrenheit.FFX.Ids;
 
 public static class DeathAnimationId {
     public const T_XDeathAnimationId DEATH_NORMAL  = 0; // 死：倒れる：レイズ可

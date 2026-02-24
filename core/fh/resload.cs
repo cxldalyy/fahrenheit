@@ -4,7 +4,7 @@ using Hexa.NET.ImGui;
 
 using TerraFX.Interop.DirectX;
 
-namespace Fahrenheit.Core;
+namespace Fahrenheit;
 
 /// <summary>
 ///     Indicates the type of texture the input to <see cref="IFhResourceLoader"/> should be interpreted as.

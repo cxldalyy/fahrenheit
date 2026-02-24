@@ -7,7 +7,7 @@
  * /ffx_ps2/ffx/proj2/chr/ath/battle/monmagic1.ath
  */
 
-namespace Fahrenheit.Core.FFX.Ids;
+namespace Fahrenheit.FFX.Ids;
 
 public static class MonsterCommandId {
     public const T_XCommandId MCOM_4000  = 0x40_00;

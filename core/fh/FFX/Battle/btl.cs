@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.FFX.Battle;
+namespace Fahrenheit.FFX.Battle;
 
 
 public unsafe class PosAreaSomethingHelper(nint pBase, PosAreaSomeInfo someInfo) {

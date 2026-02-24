@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Fahrenheit.Core.FFX;
+namespace Fahrenheit.FFX;
 
 /// <summary>
 ///     A representation of an offset to text commonly used in Excel files.

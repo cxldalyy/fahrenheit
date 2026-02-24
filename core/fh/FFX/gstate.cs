@@ -1,9 +1,9 @@
 ﻿// SPDX-License-Identifier: MIT
 
-using Fahrenheit.Core.Atel;
-using Fahrenheit.Core.FFX.Battle;
+using Fahrenheit.Atel;
+using Fahrenheit.FFX.Battle;
 
-namespace Fahrenheit.Core.FFX;
+namespace Fahrenheit.FFX;
 
 public unsafe static class Globals {
     public static LocalizationManager* localization_manager => (LocalizationManager*)FhUtil.get_at<nint>(0x8DED48);

@@ -7,7 +7,7 @@
  * /ffx_ps2/ffx/proj2/chr/ath/battle/camera.ath
  */
 
-namespace Fahrenheit.Core.FFX.Ids;
+namespace Fahrenheit.FFX.Ids;
 
 public static class BtlResultId {
     public const T_XBtlResultId BTL_RESULT_LOSE       = 1;

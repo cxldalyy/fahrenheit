@@ -2,7 +2,7 @@
 
 using Hexa.NET.ImGui;
 
-namespace Fahrenheit.Core;
+namespace Fahrenheit;
 
 public unsafe class FhImGuiHelper {
 

@@ -5,7 +5,7 @@
  * /ffx_ps2/ffx2/master/jppc/battle/header/btlhead.src
  */
 
-namespace Fahrenheit.Core.FFX2.Ids;
+namespace Fahrenheit.FFX2.Ids;
 
 public static class BtlSeTypeId {
     public const T_X2BtlSeTypeId BTL_SE_CRITICAL_HIT       =  0; //  0:クリティカルヒット

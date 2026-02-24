@@ -1,4 +1,4 @@
-namespace Fahrenheit.Core.FFX;
+namespace Fahrenheit.FFX;
 
 /// <summary>
 ///     Factors in the calculation of aeon stat boosts based on Yuna's stats.<br/>

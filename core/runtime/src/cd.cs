@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.Runtime;
+namespace Fahrenheit.Runtime;
 
 /* [fkelava 11/02/26 04:19]
  * Broadly speaking, the game has two file load paths. Most files are looked up by name, and the EFL

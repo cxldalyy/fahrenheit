@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.FFX.Battle;
+namespace Fahrenheit.FFX.Battle;
 
 [StructLayout(LayoutKind.Explicit, Size = 0x10)]
 public struct AttackCommandInfo {

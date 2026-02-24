@@ -1,4 +1,4 @@
-namespace Fahrenheit.Core.FFX.Ids;
+namespace Fahrenheit.FFX.Ids;
 
 public static class AutoAbilityIds {
     public const T_XAutoAbilityId SENSOR = 0x8000;

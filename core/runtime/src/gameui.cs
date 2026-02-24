@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.Runtime;
+namespace Fahrenheit.Runtime;
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 internal unsafe delegate void TOMkpCrossExtMesFontLClutTypeRGBA(

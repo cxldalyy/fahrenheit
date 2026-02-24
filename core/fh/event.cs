@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core;
+namespace Fahrenheit;
 
 /// <summary>Represents the method that will handle a Fahrenheit event when the event provides data.</summary>
 /// <param name="e">An object that contains the event data.</param>

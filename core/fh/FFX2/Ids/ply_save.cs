@@ -5,7 +5,7 @@
  * /ffx_ps2/ffx2/master/jppc/battle/header/ply_save.ath
  */
 
-namespace Fahrenheit.Core.FFX2.Ids;
+namespace Fahrenheit.FFX2.Ids;
 
 public static class PlySaveId {
     public const T_X2PlySaveId PC_YUNA          = 0x00;

@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.Runtime;
+namespace Fahrenheit.Runtime;
 
 /* [fkelava 11/02/26 04:03]
  * By default, the game only probes its VBF data archives for files and fails if it cannot find them.

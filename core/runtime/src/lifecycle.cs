@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MIT
 
-namespace Fahrenheit.Core.Runtime;
+namespace Fahrenheit.Runtime;
 
 /* [fkelava 21/6/25 01:52]
  * Temporary until FhCall is restored to `ffx-v3` RE state.
