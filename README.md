@@ -1,10 +1,8 @@
-<h1 align="center">Fahrenheit</h1>
-<h3 align="center">A Final Fantasy X/X-2 reverse-engineering project and mod framework</h3>
+# Fahrenheit
 
-<p align="center">
-<img alt="Logo Banner" src="https://raw.githubusercontent.com/peppy-enterprises/fahrenheit/refs/heads/main/assets/fh_banner.png"/>
-<br/>
-<h4 align="center">See the world as you never have before.</h3>
+A Final Fantasy X/X-2 reverse-engineering project and mod framework.
+
+![banner](https://raw.githubusercontent.com/peppy-enterprises/fahrenheit/refs/heads/main/assets/fh_banner.png)
 
 ## What is Fahrenheit?
 Fahrenheit is a reverse-engineering project for the [Final Fantasy X and X-2 HD Remasters](https://store.steampowered.com/app/359870/).
@@ -16,23 +14,15 @@ within the games, allowing you to write mods in any compatible language.
 The knowledge gathered by the project underpins many tools and mods for the game, such as the
 [AI/VI TAS](https://github.com/coderwilson/FFX_TAS_Python), [Cutscene Remover](https://github.com/erickt420/FFXCutsceneRemover) mod,
 [Karifean](https://github.com/Karifean)'s [FFXDataParser](https://github.com/Karifean/FFXDataParser), and more.
-
-## Why?
-Many efforts have been made to tackle these games over the years, and few have succeeded in modding
-these timeless games. The knowledge gathered by such modders is often lost to time and exceptionally hard to find today.
-
-Fahrenheit attempts to put an end to this.
-
-It aims to exceed all these efforts in scope, and stay free for others to analyze,
-improve, learn from and use- now and forever.
+Fahrenheit, like all of these tools, is free for you to analyze, improve, learn from and use- now and forever.
 
 ## Cloning, building from source and testing
 Fahrenheit includes submodules. To clone them all, use
 ``git clone --recurse-submodules https://github.com/peppy-enterprises/fahrenheit``.
 
-Please ensure the folder you cloned to does not contain special characters. This can cause build errors.
+Ensure the folder you cloned to does not contain special characters. This can cause build errors.
 
-Building requires Visual Studio 2026 (full IDE or Build Tools only) with the following workloads:
+Building **requires** Visual Studio 2026 (full IDE or Build Tools only) with the following workloads:
 - .NET desktop development (latest version)
 - C++ desktop development (latest version)
 
