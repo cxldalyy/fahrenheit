@@ -217,6 +217,7 @@ public unsafe sealed class FhImguiModule : FhModule, IFhNativeGraphicsUser {
         if (_ptr_rtv != null) {
             _ptr_device_ctx->OMSetRenderTargets(0, null, null);
             _ptr_rtv       ->Release();
+            _ptr_rtv = null;
         }
 
         Interlocked.CompareExchange(ref _rtv_generated, 0, 1);
