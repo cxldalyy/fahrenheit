@@ -79,12 +79,12 @@ Time permitting, the goals (in no specific order) of the project are:
 Yes. Feel free to join us in [Cid's Salvage Ship](https://discord.gg/AGx2grw9nD), a Discord server that supports Fahrenheit and related efforts.
 
 ## License
-Fahrenheit source code is licensed under the [MIT](https://github.com/fkelava/fahrenheit/blob/main/LICENSE.txt) license.
+Fahrenheit source code is licensed under the [MIT](https://github.com/peppy-enterprises/fahrenheit/blob/main/LICENSE.txt) license.
 
 Assets (the contents of the ``assets`` folder) may be used in forks of Fahrenheit, but _not_ for any other purpose!
 
 For third-party code license notices, please see
-[THIRD-PARTY-NOTICES](https://github.com/fkelava/fahrenheit/blob/main/THIRD-PARTY-NOTICES.txt).
+[THIRD-PARTY-NOTICES](https://github.com/peppy-enterprises/fahrenheit/blob/main/THIRD-PARTY-NOTICES.txt).
 
 ## Associated and/or derived projects
 You should check out the following projects if you want finished mods or approachable tools.
