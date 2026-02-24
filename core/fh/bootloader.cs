@@ -132,9 +132,7 @@ internal sealed class FhLoader {
 
     internal FhLoader() {
         // Loading the core libraries into ALC.Default ensures they do not 'leak' into plugins' load contexts, causing type identity mismatches.
-        AssemblyLoadContext.Default.LoadFromAssemblyPath(Path.Join(FhEnvironment.Finder.Binaries.FullName, "fhcore.dll"));
-        AssemblyLoadContext.Default.LoadFromAssemblyPath(Path.Join(FhEnvironment.Finder.Binaries.FullName, "fhx.dll"));
-        AssemblyLoadContext.Default.LoadFromAssemblyPath(Path.Join(FhEnvironment.Finder.Binaries.FullName, "fhx2.dll"));
+        AssemblyLoadContext.Default.LoadFromAssemblyPath(Path.Join(FhEnvironment.Finder.Binaries.FullName, "fh.dll"));
         // required for Hexa.NET.ImGui's assembly-probing logic
         HexaGen.Runtime.LibraryLoader.CustomLoadFolders.Add(FhEnvironment.Finder.Binaries.FullName);
     }
