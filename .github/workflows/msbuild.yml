@@ -124,6 +124,8 @@ jobs:
       id: nuget_login
       with:
         user: ${{ secrets.NUGET_USER }}
+        token-service-url: https://int.nugettest.org/api/v2/token
+        audience: https://int.nugettest.org
       
     - name: Upload NuGet package
       if: github.event_name == 'release' && github.event.action == 'published'
