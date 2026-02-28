@@ -115,7 +115,7 @@ jobs:
       if: github.event_name == 'release' && github.event.action == 'published' 
       working-directory: ${{ github.workspace }}
       shell: pwsh
-      run: msbuild /m /p:Configuration /p:Configuration=${{ env.BUILD_CONFIGURATION }} /t:Pack .\core\fh\Fahrenheit.csproj
+      run: msbuild /m /p:Configuration=${{ env.BUILD_CONFIGURATION }} /t:Pack .\core\fh\Fahrenheit.csproj
       
     # Get a short-lived NuGet API key
     - name: NuGet login (OIDC → temp API key)
