@@ -114,11 +114,11 @@ try {
     7z a -tzip "fahrenheit_windows_x86_$($configuration)_$($tag).zip" $Artifacts
     
     # Attach the generated release ZIP to the appropriate GH tag.
-    #gh release upload $tag "fahrenheit_windows_x86_$($configuration)_$($tag).zip"
+    gh release upload $tag "fahrenheit_windows_x86_$($configuration)_$($tag).zip"
     
     # Push the NuGet packages.
     # They are currently not signed pending a support thread with Certum wrt. inability to sign SHA-256.
-    dotnet nuget push $Packages --api-key $nugetApiKey --source https://apiint.nugettest.org/v3/index.json
+    dotnet nuget push $Packages --api-key $nugetApiKey --source https://api.nuget.org/v3/index.json
 }
 catch {
     Write-Host -Object $_
