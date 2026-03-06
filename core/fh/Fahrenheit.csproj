@@ -4,10 +4,8 @@
         See https://learn.microsoft.com/en-us/nuget/reference/msbuild-targets#pack-target,
     -->
 
-    <!-- PACKAGING PROPERTIES -->
+    <!-- NUGET PACKAGE PROPERTIES -->
     <PropertyGroup>
-        <IsPackable>true</IsPackable>
-
         <PackageId>Fahrenheit</PackageId>
         <Authors>The Fahrenheit contributors</Authors>
         <Description>The mod framework for the Final Fantasy X/X-2 HD Remasters.</Description>
@@ -23,6 +21,12 @@
         <None Include="..\..\assets\fh_base_256.png" Pack="true" PackagePath="\"/>
         <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
+
+    <!-- PACKAGING CONFIGURATION -->
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
 
     <!-- ASSEMBLY BASIC PROPERTIES -->
     <PropertyGroup>

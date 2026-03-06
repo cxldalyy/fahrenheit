@@ -4,12 +4,8 @@
         See https://learn.microsoft.com/en-us/nuget/reference/msbuild-targets#pack-target,
     -->
 
-    <!-- PACKAGING PROPERTIES -->
+    <!-- NUGET PACKAGE PROPERTIES -->
     <PropertyGroup>
-        <IsPackable>true</IsPackable>
-        <IsPublishable>false</IsPublishable>
-        <!-- SDK should not be part of 'deploy', hence unpublishable -->
-
         <PackageId>Fahrenheit.Sdk</PackageId>
         <Authors>The Fahrenheit contributors</Authors>
         <Description>A MSBuild SDK for Fahrenheit, the mod framework for the Final Fantasy X/X-2 HD Remasters.</Description>
@@ -20,8 +16,21 @@
         <RepositoryUrl>https://github.com/fahrenheit-crew/fahrenheit.git</RepositoryUrl>
     </PropertyGroup>
 
+    <!-- PACKAGING CONFIGURATION -->
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <IsPublishable>false</IsPublishable>
+        <!-- SDK should not be part of 'deploy', hence unpublishable -->
+
+        <PackageType>MSBuildSdk</PackageType>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+
     <!-- PACKAGING EXTRA FILES -->
     <ItemGroup>
+        <None Include="Sdk\**" Pack="true" PackagePath="%(Identity)"/>
         <None Include="..\..\assets\fh_arrow_256.png" Pack="true" PackagePath="\"/>
         <None Include="README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
@@ -29,14 +38,6 @@
     <!-- ASSEMBLY BASIC PROPERTIES -->
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <PackageType>MSBuildSdk</PackageType>
-        <IncludeBuildOutput>false</IncludeBuildOutput>
-        <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
-        <!--
-        STUBBED OUT UNTIL WE FINISH BOOTSTRAPPING THE PACKAGES
-
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        -->
     </PropertyGroup>
 
     <!-- ASSEMBLY ADDITIONAL PROPERTIES -->
