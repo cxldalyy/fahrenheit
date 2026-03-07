@@ -125,9 +125,7 @@ public unsafe struct SphereGridNode {
         int count = 0;
 
         foreach (uint ptr in link_ptrs) {
-            if ((SphereGridLink*)ptr is not null) {
-                count++;
-            }
+            if (ptr != 0) count++;
         }
 
         return count;
@@ -150,6 +148,8 @@ public unsafe struct SphereGridNode {
         HashSet<short> set = [];
 
         foreach (uint ptr in link_ptrs) {
+            if (ptr == 0) continue;
+        
             SphereGridLink* link = (SphereGridLink*)ptr;
 
             short other_idx = link->node_a_idx != self_idx ? link->node_a_idx : link->node_b_idx;
