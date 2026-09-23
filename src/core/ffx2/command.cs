@@ -15,8 +15,13 @@ public struct PCommand {
 
 [StructLayout(LayoutKind.Sequential)]
 public struct PCommandData {
-    public ushort    ap;
-    public T_X2JobId use_job;
+    public byte   btl_seq;
+    public byte   get_ap;
+    public ushort ap;
+    public ushort use_job;
+
+    public ushort    ap_to_unlock;
+    public T_X2JobId command_class;
     public ushort    reserve3;
 }
 
@@ -27,7 +32,7 @@ public struct MCommand {
 
 [StructLayout(LayoutKind.Sequential)]
 public struct MCommandData {
-    public ushort ap;
+    public InlineArray8<byte> unknown; // Perhaps Creature related?
 }
 
 public struct ItemCommand {
@@ -37,6 +42,11 @@ public struct ItemCommand {
 
 [StructLayout(LayoutKind.Sequential)]
 public struct ItemData {
+    public byte   btl_seq;
+    public byte   get_ap;
+    public ushort ap;
+    public ushort use_job;
+
     public byte item_element;
     public byte item_level;
     public uint price;
@@ -92,10 +102,6 @@ public struct Command {
     public byte          index1;
     public T_X2CommandId blue_bullet;
     public ushort        index2;
-    public uint          reserve2; // Seems related to cast animation?
-
-    public byte btl_seq;
-    public byte get_ap;
 
     public  bool is_top_level_in_menu { get { return flags_menu.get_bit(0); } set { flags_menu.set_bit(0, value); } }
     private bool _menu_f4             { get { return flags_menu.get_bit(3); } set { flags_menu.set_bit(3, value); } }
