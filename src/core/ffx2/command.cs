@@ -15,9 +15,9 @@ public struct PCommand {
 
 [StructLayout(LayoutKind.Sequential)]
 public struct PCommandData {
-    public ushort ap;
-    public byte   use_job;
-    public ushort reserve3;
+    public ushort    ap;
+    public T_X2JobId use_job;
+    public ushort    reserve3;
 }
 
 public struct MCommand {
@@ -88,14 +88,14 @@ public struct Command {
 
     public SpeciesEffectiveness species_effectiveness;
 
-    public byte   magic_cancel;
-    public byte   index;
-    public ushort blue_bullet;
-    public ushort index2;
-    public uint   reserve2; // Seems related to cast animation?
-    public byte   btl_seq;
-    public byte   get_ap;
+    public byte          magic_cancel;
+    public byte          index1;
+    public T_X2CommandId blue_bullet;
+    public ushort        index2;
+    public uint          reserve2; // Seems related to cast animation?
 
+    public byte btl_seq;
+    public byte get_ap;
 
     public  bool is_top_level_in_menu { get { return flags_menu.get_bit(0); } set { flags_menu.set_bit(0, value); } }
     private bool _menu_f4             { get { return flags_menu.get_bit(3); } set { flags_menu.set_bit(3, value); } }
@@ -123,15 +123,15 @@ public struct Command {
     public bool steals_item               { readonly get { return flags_misc.get_bit ( 9);    } set { flags_misc.set_bit ( 9,    value); } }
     public bool _hit_effect_change        { readonly get { return flags_misc.get_bit (10);    } set { flags_misc.set_bit (10,    value); } }
     public bool uses_dancing_cast_anim    { readonly get { return flags_misc.get_bit (11);    } set { flags_misc.set_bit (11,    value); } }
-    public bool inflicts_delay_cast       { readonly get { return flags_misc.get_bit (12);    } set { flags_misc.set_bit (12,    value); } }
-    public bool inflicts_delay_weak       { readonly get { return flags_misc.get_bit (13);    } set { flags_misc.set_bit (13,    value); } }
+    public bool inflicts_delay_weak       { readonly get { return flags_misc.get_bit (12);    } set { flags_misc.set_bit (12,    value); } }
+    public bool inflicts_delay_strong     { readonly get { return flags_misc.get_bit (13);    } set { flags_misc.set_bit (13,    value); } }
     public bool targets_randomly          { readonly get { return flags_misc.get_bit (14);    } set { flags_misc.set_bit (14,    value); } }
     public bool is_affected_by_silence    { readonly get { return flags_misc.get_bit (15);    } set { flags_misc.set_bit (15,    value); } }
     public bool uses_character_properties { readonly get { return flags_misc.get_bit (16);    } set { flags_misc.set_bit (16,    value); } }
     public bool destroys_user             { readonly get { return flags_misc.get_bit (17);    } set { flags_misc.set_bit (17,    value); } }
     public bool misses_living_targets     { readonly get { return flags_misc.get_bit (18);    } set { flags_misc.set_bit (18,    value); } }
-    public bool is_mix_result             { readonly get { return flags_misc.get_bit (19);    } set { flags_misc.set_bit (19,    value); } }
-    public bool is_reels_result           { readonly get { return flags_misc.get_bit (20);    } set { flags_misc.set_bit (20,    value); } }
+    public bool is_reels_result           { readonly get { return flags_misc.get_bit (19);    } set { flags_misc.set_bit (19,    value); } }
+    public bool is_mix_result             { readonly get { return flags_misc.get_bit (20);    } set { flags_misc.set_bit (20,    value); } }
     public bool show_user_casting_effects { readonly get { return flags_misc.get_bit (21);    } set { flags_misc.set_bit (21,    value); } }
     public bool disables_neck_movement    { readonly get { return flags_misc.get_bit (22);    } set { flags_misc.set_bit (22,    value); } }
     public bool _vanish_cursor            { readonly get { return flags_misc.get_bit (23);    } set { flags_misc.set_bit (23,    value); } }
