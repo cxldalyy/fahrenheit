@@ -3,39 +3,38 @@
 // This file is part of Fahrenheit, © 2023-2026 The Fahrenheit contributors.
 // It is licensed to you under the GNU Lesser General Public License, version 3.0 or later. See COPYING, COPYING.LESSER.
 
-// ffx_ps2/ffx2/master/jppc/battle/kernel/plate.h
+// ffx2/master/jppc/battle/kernel/accessory.h
 // Switch release of FFX/X-2 HD
 
 namespace Fahrenheit.FFX2;
 
-[InlineArray(4)]
-public struct PlateMessages {
-    public ExcelTextOffset e0;
-}
-
-[StructLayout(LayoutKind.Explicit, Pack = 4, Size = 0x38)]
-public struct PlateCreatureData {
+[StructLayout(LayoutKind.Explicit, Pack = 4, Size = 0x30)]
+public struct AccessoryCreatureData {
     [FieldOffset(0x00)] public ExcelTextOffset       help_offset;
     [FieldOffset(0x04)] public InlineArray2<Ability> abilities;
 
-    [FieldOffset(0x2C)] public StatChanges stat_changes;
+    [FieldOffset(0x1D)] public byte   feed_amount;
+    [FieldOffset(0x1E)] public ushort ability_to_learn;
 }
 
 [StructLayout(LayoutKind.Sequential)]
-public struct Plate {
+public struct Accessory {
     public ExcelTextOffset name_offset;
     public ExcelTextOffset help_offset;
-    public PlateMessages   messages;
 
-    public ushort      bonus;
-    public byte        icon;
+    public byte ext_data;
+    public byte equip;
+    public byte user;
+    public byte icon;
+    public byte seq;
+
+    public byte reserve;
+
     public StatChanges stat_changes;
 
-    public byte reserve1;
-    public byte reserve2;
-    public byte reserve3;
+    public InlineArray2<Ability> abilities;
 
-    public InlineArray8<Ability> skill;
+    public uint price;
 
-    public PlateCreatureData creature_data;
+    public AccessoryCreatureData creature_data;
 }
