@@ -31,9 +31,9 @@ public struct Plate {
     public byte        icon;
     public StatChanges stat_changes;
 
-    public byte reserve1;
-    public byte reserve2;
-    public byte reserve3;
+    private byte reserve1;
+    private byte reserve2;
+    private byte reserve3;
 
     public InlineArray8<Ability> skill;
 

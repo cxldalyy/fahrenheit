@@ -43,7 +43,7 @@ public struct Accessory {
     public byte icon;
     public byte seq;
 
-    public byte reserve;
+    private byte reserve;
 
     public StatChanges stat_changes;
 

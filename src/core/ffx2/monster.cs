@@ -72,6 +72,6 @@ public struct Monster {
 
     public byte def_zantetsu;
 
-    public byte   reserve1;
-    public ushort reserve2;
+    private byte   reserve1;
+    private ushort reserve2;
 }

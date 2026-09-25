@@ -35,5 +35,5 @@ public struct Party {
 
     public int escape_count; // Never gets written to?
 
-    public ushort reserve;
+    private ushort reserve;
 }

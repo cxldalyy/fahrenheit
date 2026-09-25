@@ -24,12 +24,12 @@ public struct AutoAbility {
     public ExcelTextOffset name;
     public ExcelTextOffset help;
 
-    public InlineArray4<short> reserve1;
+    private InlineArray4<short> reserve1;
 
     public T_X2CommandId command_menu;        // Which menus actions' cast times to reduce
     public sbyte         cast_time_reduction; // Percentage
 
-    public byte reserve2;
+    private byte reserve2;
 
     public AAbilityFlags special_data;
 
@@ -56,8 +56,8 @@ public struct AutoAbility {
 
     public byte icon;
 
-    public byte   reserve3;
-    public ushort reserve4;
+    private byte   reserve3;
+    private ushort reserve4;
 
     public ushort ap;
 }

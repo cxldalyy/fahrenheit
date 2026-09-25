@@ -18,7 +18,7 @@ public struct PCommandData {
     public ushort    ap;
     public T_X2JobId job_use;
 
-    public ushort reserve3;
+    private ushort reserve3;
 }
 
 public struct MCommand {
@@ -43,7 +43,7 @@ public struct ItemData {
     public uint price;
 
     // Creature Data
-    public byte reserve3;
+    private byte reserve3;
 
     public byte            feed_amount;
     public ushort          ability_to_learn;
@@ -66,7 +66,7 @@ public struct Command {
     public uint flags_target;
     public uint flags_misc;
 
-    public uint reserve1;
+    private uint reserve1;
 
     public uint   flags_damage;
     public ushort party_preview;
@@ -98,7 +98,7 @@ public struct Command {
     public T_X2CommandId blue_bullet;
     public ushort        index2;
 
-    public uint reserve2; // Seems related to cast animation?
+    private uint reserve2; // Seems related to cast animation?
 
     public byte btl_seq;
     public byte get_ap;
