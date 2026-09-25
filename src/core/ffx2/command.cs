@@ -41,8 +41,8 @@ public struct ItemCommand {
 
 [StructLayout(LayoutKind.Sequential)]
 public struct ItemData {
-    public byte item_element;
-    public byte item_level;
+    public byte element;
+    public byte level;
     public uint price;
 
     // Creature Data
@@ -74,9 +74,9 @@ public struct Command {
     public uint   flags_damage;
     public ushort party_preview;
 
-    public ushort atb_cost;
-    public ushort cast_cost;
-    public byte   mp_cost;
+    public ushort cost_atb;
+    public ushort cost_cast;
+    public byte   cost_mp;
 
     public byte flags_damage_class;
     public byte dmg_formula;

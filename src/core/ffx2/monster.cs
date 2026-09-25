@@ -25,8 +25,8 @@ public enum SpecialImmunities : ushort {
 
 [StructLayout(LayoutKind.Sequential)]
 public struct Monster {
-    public uint name;
-    public uint help;
+    public ExcelTextOffset name;
+    public ExcelTextOffset help;
 
     public uint max_hp;
     public uint max_mp;
