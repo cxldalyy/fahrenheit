@@ -32,9 +32,9 @@ public struct Monster {
     public uint max_mp;
     public byte level;
     public byte strength;
-    public byte defence;
+    public byte defense;
     public byte magic;
-    public byte magic_defence;
+    public byte magic_defense;
     public byte agility;
     public byte accuracy;
     public byte evasion;
@@ -66,9 +66,9 @@ public struct Monster {
 
     public ushort oversoul;
 
-    public SpeciesEffectiveness monster_type;
+    public Species monster_type; // What species the monster is for double damage commands
 
-    public ChrLoot mon_loot;
+    public ChrLoot loot;
 
     public byte def_zantetsu;
 

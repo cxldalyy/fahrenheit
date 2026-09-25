@@ -9,9 +9,9 @@
 namespace Fahrenheit.FFX2;
 
 public enum AtbSpeed : byte {
-    Slow   = 0,
-    Normal = 1,
-    Fast   = 2
+    SLOW   = 0,
+    NORMAL = 1,
+    FAST   = 2
 }
 
 [StructLayout(LayoutKind.Sequential)]
@@ -31,7 +31,7 @@ public struct Party {
     public InlineArray8<byte>          item_num;
 
     public InlineArray2<int>   plates_obtained; // Bitfield
-    public InlineArray30<byte> dressphere_count;
+    public InlineArray30<byte> job_count;
 
     public int escape_count; // Never gets written to?
 

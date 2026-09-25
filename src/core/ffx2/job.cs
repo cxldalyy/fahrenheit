@@ -39,13 +39,11 @@ public struct StatGrowthGeneric {
     public byte quadratic_div_b;
 }
 
-/// <summary>
-///     The requirement and ability fields can vary depending on the context.
-///     At base, requirement and ability can both be either a T_X2CommandId or T_X2AutoAbilityId.
-///     For plate, requirement is strictly just the index of the gate to move through.
-///     For job, a requirement of "1" makes the command require the precalculated AP count for it.
-///     Creatures also have their own contexts, such as taking Level as a requirement in job where YRP do not.
-/// </summary>
+/// <remarks>  
+///     The meaning of the fields is contextual. `ability` can be a command or auto-ability.  
+///     `requirement` can be the index of a Garment Grid gate, a minimum AP requirement,  
+///     or a level requirement for creatures.  
+/// </remarks>  
 [StructLayout(LayoutKind.Sequential, Size = 0x4)]
 public struct Ability {
     public ushort requirement;
@@ -91,7 +89,7 @@ public struct Job {
     public ExcelTextOffset help;
     public byte            user;
     public byte            data;
-    public byte            dressphere_menu_ordering;
+    public byte            index;
     public byte            icon;
     public T_X2CommandId   berserk_action;
 
@@ -107,11 +105,9 @@ public struct Job {
     public StatGrowthGeneric growth_accuracy;
     public StatGrowthGeneric growth_luck;
 
-    public InlineArray16<Ability> dressphere_abilities;
+    public InlineArray16<Ability> abilities;
 
-    public JobWeapons yuna_weapon_data;
-    public JobWeapons rikku_weapon_data;
-    public JobWeapons paine_weapon_data;
+    public InlineArray3<JobWeapons> weapon_data;
 
     public JobCreatureData creature_data;
 }

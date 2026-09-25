@@ -8,6 +8,7 @@
 
 namespace Fahrenheit.FFX2;
 
+[StructLayout(LayoutKind.Sequential)]
 public struct PCommand {
     public Command      command;
     public PCommandData command_pdata;
@@ -21,6 +22,7 @@ public struct PCommandData {
     private ushort reserve3;
 }
 
+[StructLayout(LayoutKind.Sequential)]
 public struct MCommand {
     public Command      command;
     public MCommandData command_mdata;
@@ -31,6 +33,7 @@ public struct MCommandData {
     public ushort ap;
 }
 
+[StructLayout(LayoutKind.Sequential)]
 public struct ItemCommand {
     public Command  command;
     public ItemData item_data;
@@ -90,8 +93,8 @@ public struct Command {
     public StatusDurationMap2 status_time;
 
     public byte icon;
-
-    public SpeciesEffectiveness species_effectiveness;
+    
+    public Species species_effectiveness; // Which species to target for double damage
 
     public byte          magic_cancel;
     public byte          index1;
