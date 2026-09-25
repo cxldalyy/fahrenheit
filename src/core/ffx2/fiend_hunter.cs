@@ -9,7 +9,7 @@ namespace Fahrenheit.FFX2;
 ///     Commands deal 4x damage to the respective fiend type when these flags are set.
 /// </summary>
 [Flags]
-public enum Species : ushort {
+public enum FiendSpecies : ushort {
     NONE    = 0,
     MACHINA = 1 << 0,
     MECH    = 1 << 1,
@@ -24,55 +24,55 @@ public enum Species : ushort {
 }
 
 public static partial class FhEnumExt {
-    extension(Species flags) {
+    extension(FiendSpecies flags) {
         public bool machina {
-            get { return flags.HasFlag(Species.MACHINA); }
-            set { if (value) flags |= Species.MACHINA; else flags &= ~Species.MACHINA; }
+            get { return flags.HasFlag(FiendSpecies.MACHINA); }
+            set { if (value) flags |= FiendSpecies.MACHINA; else flags &= ~FiendSpecies.MACHINA; }
         }
 
         public bool mech {
-            get { return flags.HasFlag(Species.MECH); }
-            set { if (value) flags |= Species.MECH; else flags &= ~Species.MECH; }
+            get { return flags.HasFlag(FiendSpecies.MECH); }
+            set { if (value) flags |= FiendSpecies.MECH; else flags &= ~FiendSpecies.MECH; }
         }
 
         public bool lizard {
-            get { return flags.HasFlag(Species.LIZARD); }
-            set { if (value) flags |= Species.LIZARD; else flags &= ~Species.LIZARD; }
+            get { return flags.HasFlag(FiendSpecies.LIZARD); }
+            set { if (value) flags |= FiendSpecies.LIZARD; else flags &= ~FiendSpecies.LIZARD; }
         }
 
         public bool element {
-            get { return flags.HasFlag(Species.ELEMENT); }
-            set { if (value) flags |= Species.ELEMENT; else flags &= ~Species.ELEMENT; }
+            get { return flags.HasFlag(FiendSpecies.ELEMENT); }
+            set { if (value) flags |= FiendSpecies.ELEMENT; else flags &= ~FiendSpecies.ELEMENT; }
         }
 
         public bool drake {
-            get { return flags.HasFlag(Species.DRAKE); }
-            set { if (value) flags |= Species.DRAKE; else flags &= ~Species.DRAKE; }
+            get { return flags.HasFlag(FiendSpecies.DRAKE); }
+            set { if (value) flags |= FiendSpecies.DRAKE; else flags &= ~FiendSpecies.DRAKE; }
         }
 
         public bool devil {
-            get { return flags.HasFlag(Species.DEVIL); }
-            set { if (value) flags |= Species.DEVIL; else flags &= ~Species.DEVIL; }
+            get { return flags.HasFlag(FiendSpecies.DEVIL); }
+            set { if (value) flags |= FiendSpecies.DEVIL; else flags &= ~FiendSpecies.DEVIL; }
         }
 
         public bool flan {
-            get { return flags.HasFlag(Species.FLAN); }
-            set { if (value) flags |= Species.FLAN; else flags &= ~Species.FLAN; }
+            get { return flags.HasFlag(FiendSpecies.FLAN); }
+            set { if (value) flags |= FiendSpecies.FLAN; else flags &= ~FiendSpecies.FLAN; }
         }
 
         public bool wolf {
-            get { return flags.HasFlag(Species.WOLF); }
-            set { if (value) flags |= Species.WOLF; else flags &= ~Species.WOLF; }
+            get { return flags.HasFlag(FiendSpecies.WOLF); }
+            set { if (value) flags |= FiendSpecies.WOLF; else flags &= ~FiendSpecies.WOLF; }
         }
 
         public bool wing {
-            get { return flags.HasFlag(Species.WING); }
-            set { if (value) flags |= Species.WING; else flags &= ~Species.WING; }
+            get { return flags.HasFlag(FiendSpecies.WING); }
+            set { if (value) flags |= FiendSpecies.WING; else flags &= ~FiendSpecies.WING; }
         }
 
         public bool helm {
-            get { return flags.HasFlag(Species.HELM); }
-            set { if (value) flags |= Species.HELM; else flags &= ~Species.HELM; }
+            get { return flags.HasFlag(FiendSpecies.HELM); }
+            set { if (value) flags |= FiendSpecies.HELM; else flags &= ~FiendSpecies.HELM; }
         }
     }
 }

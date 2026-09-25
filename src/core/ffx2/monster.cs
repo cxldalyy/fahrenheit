@@ -66,7 +66,7 @@ public struct Monster {
 
     public ushort oversoul;
 
-    public Species monster_type; // What species the monster is for double damage commands
+    public FiendSpecies monster_type; // What species the monster is for double damage commands
 
     public ChrLoot loot;
 

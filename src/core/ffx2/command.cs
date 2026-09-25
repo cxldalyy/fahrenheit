@@ -93,8 +93,8 @@ public struct Command {
     public StatusDurationMap2 status_time;
 
     public byte icon;
-    
-    public Species species_effectiveness; // Which species to target for double damage
+
+    public FiendSpecies species_effectiveness; // Which species to target for double damage
 
     public byte          magic_cancel;
     public byte          index1;
