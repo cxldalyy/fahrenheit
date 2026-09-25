@@ -79,7 +79,7 @@ public struct JobWeapons {
 
 [StructLayout(LayoutKind.Explicit, Size = 0x38)]
 public struct JobCreatureData {
-    [FieldOffset(0x00)] public ExcelTextOffset       help_offset;
+    [FieldOffset(0x00)] public ExcelTextOffset       help;
     [FieldOffset(0x04)] public InlineArray2<Ability> abilities;
 
     [FieldOffset(0x1C)] public StatChanges stat_changes;
@@ -87,8 +87,8 @@ public struct JobCreatureData {
 
 [StructLayout(LayoutKind.Sequential)]
 public struct Job {
-    public ExcelTextOffset name_offset;
-    public ExcelTextOffset help_offset;
+    public ExcelTextOffset name;
+    public ExcelTextOffset help;
     public byte            user;
     public byte            data;
     public byte            dressphere_menu_ordering;

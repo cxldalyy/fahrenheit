@@ -8,19 +8,34 @@
 
 namespace Fahrenheit.FFX2;
 
+[StructLayout(LayoutKind.Sequential)]  
+public struct FeedStatChanges {  
+    public int  hp;  
+    public int  mp;  
+    public byte strength;  
+    public byte defense;  
+    public byte magic;  
+    public byte magic_defense;  
+    public byte agility;  
+    public byte luck;  
+    public byte evasion;  
+    public byte accuracy;  
+}
+
 [StructLayout(LayoutKind.Explicit, Pack = 4, Size = 0x30)]
 public struct AccessoryCreatureData {
-    [FieldOffset(0x00)] public ExcelTextOffset       help_offset;
+    [FieldOffset(0x00)] public ExcelTextOffset       help;
     [FieldOffset(0x04)] public InlineArray2<Ability> abilities;
 
-    [FieldOffset(0x1D)] public byte   feed_amount;
-    [FieldOffset(0x1E)] public ushort ability_to_learn;
+    [FieldOffset(0x1D)] public byte            feed_amount;
+    [FieldOffset(0x1E)] public ushort          ability_to_learn;
+    [FieldOffset(0x20)] public FeedStatChanges feed_stats;
 }
 
 [StructLayout(LayoutKind.Sequential)]
 public struct Accessory {
-    public ExcelTextOffset name_offset;
-    public ExcelTextOffset help_offset;
+    public ExcelTextOffset name;
+    public ExcelTextOffset help;
 
     public byte ext_data;
     public byte equip;

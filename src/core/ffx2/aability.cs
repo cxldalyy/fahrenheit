@@ -21,8 +21,8 @@ public enum AAbilityFlags : uint {
 
 [StructLayout(LayoutKind.Sequential)]
 public struct AutoAbility {
-    public ExcelTextOffset name_offset;
-    public ExcelTextOffset help_offset;
+    public ExcelTextOffset name;
+    public ExcelTextOffset help;
 
     public InlineArray4<short> reserve1;
 

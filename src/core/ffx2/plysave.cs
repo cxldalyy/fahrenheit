@@ -23,7 +23,7 @@ public struct PlySaveCreatureData {
 
 [StructLayout(LayoutKind.Sequential)]
 public struct PlySave {
-    public ExcelTextOffset name_offset;
+    public ExcelTextOffset name;
 
     public uint bonus_hp;
     public uint bonus_mp;

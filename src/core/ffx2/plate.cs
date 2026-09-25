@@ -15,7 +15,7 @@ public struct PlateMessages {
 
 [StructLayout(LayoutKind.Explicit, Pack = 4, Size = 0x38)]
 public struct PlateCreatureData {
-    [FieldOffset(0x00)] public ExcelTextOffset       help_offset;
+    [FieldOffset(0x00)] public ExcelTextOffset       help;
     [FieldOffset(0x04)] public InlineArray2<Ability> abilities;
 
     [FieldOffset(0x2C)] public StatChanges stat_changes;
@@ -23,8 +23,8 @@ public struct PlateCreatureData {
 
 [StructLayout(LayoutKind.Sequential)]
 public struct Plate {
-    public ExcelTextOffset name_offset;
-    public ExcelTextOffset help_offset;
+    public ExcelTextOffset name;
+    public ExcelTextOffset help;
     public PlateMessages   messages;
 
     public ushort      bonus;
