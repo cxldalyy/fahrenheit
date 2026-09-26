@@ -81,6 +81,8 @@ public struct JobCreatureData {
     [FieldOffset(0x04)] public InlineArray2<Ability> abilities;
 
     [FieldOffset(0x1C)] public StatChanges stat_changes;
+    
+    [FieldOffset(0x28)] public FeedStatChanges level_growth; // Which stat increases on Level Up
 }
 
 [StructLayout(LayoutKind.Sequential)]
